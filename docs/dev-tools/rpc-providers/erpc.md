@@ -34,7 +34,15 @@ eRPC adds:
    docker run -v $(pwd)/erpc.yaml:/erpc.yaml -p 4000:4000 ghcr.io/erpc/erpc:latest
    ```
 
-3. Send requests to `http://localhost:4000/main/evm/1313161554` for Aurora Mainnet. For Aurora Testnet, add testnet upstreams and use chain ID `1313161555`.
+3. Send requests to `http://localhost:4000/main/evm/1313161554` for Aurora Mainnet:
+
+   ```bash
+   curl http://localhost:4000/main/evm/1313161554 \
+     -H 'Content-Type: application/json' \
+     -d '{"jsonrpc":"2.0","id":1,"method":"eth_blockNumber","params":[]}'
+   ```
+
+   For Aurora Testnet, add testnet upstreams and use chain ID `1313161555`.
 
 ## Useful resources
 
